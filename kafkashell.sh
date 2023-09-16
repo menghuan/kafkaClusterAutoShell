@@ -41,7 +41,7 @@ export JVMFLAGS=$JVMFLAGS$JAAS_CONF
 
 
 # 检查指定 PID 文件对应的 Kafka 进程是否在运行，当运行成功后返回 1
-function kafkaRunning {
+function kafkaRunning(){
     PID=0
     
     if [ ! -d $PID_DIR ]; then
@@ -69,7 +69,7 @@ function kafkaRunning {
 }
 
 #杀死指定 PID 文件对应的 Kafka 进程，当 kill 成功返回 1 
-function kafkaKill {
+function kafkaKill(){
     # kafka 进程id
     local localPID=$(<$1)
     local i=0
@@ -202,7 +202,7 @@ function kafkaClean(){
 }
 
 #查询 Kafka 集群状态，包括检查每个 Kafka broker 的运行状态。
-function kafkaStatus {
+function kafkaStatus(){
     printf "Kafka Cluster Status: \n"
     local COUNT=0;
     #循环检测
